@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeatherApp</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="Public/css/styles.css">
-
+    <link rel="stylesheet" href="css/styles.css">
     <!-- Fonts -->
-    <link rel="stylesheet" href="Public/css/fonts.css">
+    <link rel="stylesheet" href="css/fonts.css">
 </head>
 <body>
     <div class="content">
         <!-- Header -->
-        <section class="header">
-            <a href="#" class="header-logo__link">
+        <header class="header">
+            <a href="#" class="header-link">
                 <img class="header-logo" src="Public/img/Logo.svg" alt="Website logo" width="191" height="30">
             </a>
             <div class="input-wrapper">
                 <input type="text" class="header-input" placeholder="Поиск по городу">
+                <div class="search-icon"></div>
             </div>
-        </section>
+        </header>
         <section class="weather-today">
             <div class="info">
                 <div class="dtl-wrapper">
@@ -29,22 +29,27 @@
                     <span class="day">Суббота, 06 января</span>
                     <span class="time">11:29</span>
                 </div>
-                <div class="temp">-7°</div>
+                <div class="temp">-7&#176;</div>
                 <div class="weather">
-                    <img src="Public/img/time=day, state=broken clouds.png" alt="weather" class="weather-icon">
+                    <img src="Public/img/time=day-state=broken-clouds.png" alt="weather" class="weather-icon">
                     <span class="weather-text">Облачно</span>
                 </div>
-                <div class="feels">Ощущается как <span class="feels-value">-11°</span></div>
+                <div class="feels">Ощущается как <span class="feels-value">-11&#176;</span></div>
             </div>
-            <div class="cards-wrapper">
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-            </div>
+            <ul class="cards-wrapper">
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+                <li class="card"></li>
+            </ul>
         </section>
+        <!-- Slider -->
+        <section class="slider"></section>
+        <!-- Footer -->
+        <section class="footer"></section>
     </div>
+    <script src="Public/js/script.js"></script>
 </body>
 </html>
