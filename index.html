@@ -7,6 +7,8 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
     <!-- Fonts -->
     <link rel="stylesheet" href="css/fonts.css">
 </head>
@@ -37,12 +39,64 @@
                 <div class="feels">Ощущается как <span class="feels-value">-11&#176;</span></div>
             </div>
             <ul class="cards-wrapper">
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
-                <li class="card"></li>
+                <li class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Влажность</h3>
+                        <img src="/Public/img/cards-icon/humidity.png" alt="icon" class="card-icon" width="32" height="32">
+                        <span class="card-value">75 %</span>
+                    </div>
+                    <div class="card-footer">
+                        <input type="range" min="0" max="100" value="65" class="slider-input" disabled>
+                        <div class="card-footer--humidity">
+                            <span class="card-footer__from">0%</span>
+                            <span class="card-footer__to">100%</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Давление</h3>
+                        <img src="./Public/img/cards-icon/barometr.png" alt="icon" class="card-icon" width="32" height="32">
+                        <span class="card-value">761</span>
+                    </div>
+                    <div class="card-footer">
+                        <input type="range" min="0" max="100" value="79" class="slider-input" disabled>
+                        Повышенное</div>
+                </li>
+                <li class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Видимость</h3>
+                        <img src="./Public/img/cards-icon/visibility.png" alt="icon" class="card-icon" width="32" height="32">
+                        <span class="card-value">28 км</span>
+                    </div>
+                    <div class="card-footer">
+                        <input type="range" min="0" max="100" value="23" class="slider-input" disabled>
+                        Нормальная</div>
+                </li>
+                <li class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Рассвет</h3>
+                        <img src="./Public/img/cards-icon/sunrise.png" alt="icon" class="card-icon" width="32" height="32">
+                        <span class="card-value">8:42</span>
+                    </div>
+                    <div class="card-footer">Прошло: 02:47</div>
+                </li>
+                <li class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Закат</h3>
+                        <img src="./Public/img/cards-icon/sunset.png" alt="icon" class="card-icon" width="32" height="32">
+                        <span class="card-value">16:37</span>
+                    </div>
+                    <div class="card-footer">Осталось: 05:08</div>
+                </li>
+                <li class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Сила ветра</h3>
+                        <img src="./Public/img/cards-icon/direction.png" alt="icon" class="card-icon" width="32" height="32">
+                        <span class="card-value">2 м/с</span>
+                    </div>
+                    <div class="card-footer">Северо-западный</div>
+                </li>
             </ul>
         </main>
         <!-- Slider -->
