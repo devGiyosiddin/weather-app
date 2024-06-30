@@ -1,1 +1,1 @@
-# WeatherApp G'iyosiddin
+# WeatherApp @G'iyosiddin
