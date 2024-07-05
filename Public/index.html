@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherApp</title>
+
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="css/fonts.css">
+    
+</head>
+<body>
+    <div class="content">
+        <!-- Header -->
+        <header class="header">
+            <a href="#" class="header-link">
+                <img class="header-logo" src="img/Logo.svg" alt="Website logo" width="192" height="31">
+            </a>
+            <div class="input-wrapper">
+                <input type="text" class="header-input" placeholder="Поиск по городу">
+                <div class="search-icon"></div>
+            </div>
+        </header>
+        <main class="weather-today">
+            <div class="info">
+                <div class="dtl-wrapper">
+                    <h3 class="location">Москва</h3>
+                    <span class="day">Суббота, 06 января</span>
+                    <span class="time">11:29</span>
+                </div>
+                <div class="temp">-7&#176;</div>
+                <div class="weather">
+                    <img src="img/weather-icons/time=night_state=broken_clouds.svg" alt="weather" class="weather-icon">
+                    <span class="weather-text">Облачно</span>
+                </div>
+                <div class="feels">Ощущается как <span class="feels-value">-11&#176;</span></div>
+            </div>
+            <ul class="cards-wrapper" id="cards">
+            </ul>
+            
+        </main>
+        <!-- Slider -->
+        <section class="slider">
+            <h3 class="visually-hidden">Слайдер</h3>
+        </section>
+        <!-- Footer -->
+        <footer class="footer"></footer>
+    </div>
+
+    <script src="../src/js/input.js"></script>
+    <script src="../src/js/insertCards.js"></script>
+</body>
+</html>

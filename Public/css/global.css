@@ -1,0 +1,55 @@
+/* Общие стили */
+:root {
+    --font-family: "Raleway", "Arial", sans-serif;
+    --main-color: #f5f4f4;
+    --card-color: #202020;
+    --card-text-color: #393939;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    outline: none;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+body {
+    min-width: 1280px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: center;
+    font-family: var(--font-family);
+    font-variant-numeric: lining-nums;
+    background: url("../img/bg-img.png") no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 32px 0;
+}
