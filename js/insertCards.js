@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     const cardsContainer = document.getElementById('cards');
     const cardsHTML = weatherData.map((card, index) => {
+        // Это я сделал чтоб круг инпута стоял как на макете, а то не получился )
         let adjustedValue = parseInt(card.value);
         if (index === 0) adjustedValue -= 10; // Первый input: -10
         else if (index === 1) adjustedValue += 20; // Второй input: +20
