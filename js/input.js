@@ -1,6 +1,6 @@
 const input = document.querySelector('.header-input');
 const inputWrapper = document.querySelector('.input-wrapper');
-const searchIcon = document.querySelector('.search-icon');
+const clearIcon = document.querySelector('.search-icon');
 
 input.addEventListener('input', function() {
     if (input.value.trim() !== '') {
@@ -17,7 +17,7 @@ input.addEventListener('keydown', function(event) {
     }
 });
 
-searchIcon.addEventListener('click', function () {
+clearIcon.addEventListener('click', function () {
     input.value = '';
     inputWrapper.classList.remove('has-text');
 });

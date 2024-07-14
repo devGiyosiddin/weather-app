@@ -51,15 +51,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
     ];
 
     const cardsContainer = document.getElementById('cards');
-    const cardsHTML = weatherData.map((card) => {
+    const cardsHTML = weatherData.map((card, index) => {
+        let adjustedValue = parseInt(card.value);
+        if (index === 0) adjustedValue -= 10; // Первый input: -10
+        else if (index === 1) adjustedValue += 20; // Второй input: +20
+        else if (index === 2) adjustedValue -= 5; // Третий input: -5
+
         return `<li class="card">
             <div class="card-content">
                 <h3 class="card-title">${card.title}</h3>
-                <img src="img/cards-icon/${card.icon}.svg" alt="icon" class="card-icon" width="32" height="32">
+                <img src="../public/cards-icon/${card.icon}.svg" alt="icon" class="card-icon" width="32" height="32">
                 <span class="card-value">${card.value}</span>
             </div>
             <div class="card-footer">
-                ${card.range ? `<input type="range" min="${parseInt(card.minParams)}" max="${parseInt(card.maxParams)}" value="${parseInt(card.value)}" class="slider-input ${card.pressure ? 'slider-input--pressure' : ''}">` : ''}
+                ${card.range ? `<input type="range" min="${parseInt(card.minParams)}" max="${parseInt(card.maxParams)}" value="${adjustedValue}" class="slider-input ${card.pressure ? 'slider-input--pressure' : ''}" disabled>` : ''}
                 ${card.humidity
                 ? `<div class="card-footer--humidity">
                         <span class="card-footer__from">${card.minParams}</span>

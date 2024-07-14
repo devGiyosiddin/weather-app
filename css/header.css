@@ -27,7 +27,7 @@
 }
 
 .search-icon {
-    background: url("../img/search-icon.svg") no-repeat;
+    background: url("../public/search-icon.svg") no-repeat;
     width: 24px;
     height: 24px;
     position: absolute;
@@ -41,7 +41,7 @@
     opacity: 1;
 }
 .has-text .search-icon {
-    background: url("../img/close-icon.svg") no-repeat;
+    background: url("../public/close-icon.svg") no-repeat;
 }
 
 /* INPUT */
