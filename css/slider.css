@@ -9,12 +9,14 @@
     display: flex;
     margin-bottom: 32px;
 }
+
 .slider-title {
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 24px;
     line-height: 133%;
 }
+
 .forecast-tab {
     position: relative;
     width: 82px;
@@ -30,7 +32,9 @@
     padding-bottom: 4px;
     margin-top: 8px;
     margin-left: 32px;
+    transition: all 1s;
 }
+
 .forecast-radio {
     display: none;
 }
@@ -39,21 +43,52 @@
 .forecast-radio:checked + .forecast-tab {
     color: var(--main-color);
 }
-.forecast-radio:checked + .forecast-tab::after {
+
+.forecast-tab::after {
     content: "";
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 100%;
     height: 2px;
     border-radius: 8px;
     background-color: var(--main-color);
+    opacity: 0;
+    transition: all 1s;
 }
+
+/* Animation for 24h tab */
+#tab-24h:checked + .forecast-tab::after {
+    left: 0;
+    right: auto;
+    width: 0;
+    opacity: 1;
+    animation: slide 1s forwards;
+}
+
+/* Animation for 5 days tab */
+#tab-5days:checked + .forecast-tab::after {
+    right: 0;
+    left: auto;
+    width: 0;
+    opacity: 1;
+    animation: slide 1s forwards;
+}
+
+/* Keyframes for Slide animation */
+@keyframes slide {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
 
 .forecast-content {
     display: none;
     align-items: center;
 }
+
 #forecast-24h {
     display: flex;
 }
@@ -73,7 +108,19 @@
     border: 0;
     background: rgba(245, 244, 244, 0.4);
     opacity: 0.5;
+    cursor: pointer;
+    transform: rotate(180deg);
 }
+
+#btn-right-24h .btn-icon,
+#btn-right-5days .btn-icon {
+    transform: rotate(180deg);
+}
+
+.forecast-btn--active {
+    opacity: 1;
+}
+
 .forecast-list {
     width: 880px;
     height: 64px;
@@ -81,10 +128,13 @@
     gap: 16px;
     list-style: none;
     margin: 0 32px;
+    /* overflow-x: auto; */
+    /* overflow-y: hidden; */
+    mask-image: linear-gradient(90deg, #000 95%, transparent 100%);
 }
+
 .forecast-item {
-    min-width: 157px;
-    max-width: 275px;
+    width: 157px;
     height: 64px;
     border-radius: 8px;
     background: rgba(245, 244, 244, 0.4);
@@ -95,4 +145,48 @@
     display: flex;
     align-items: center;
     gap: 16px;
+}
+
+.flip {
+    -webkit-animation: flip-cards 0.9s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+    animation: flip-cards 0.9s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@-webkit-keyframes flip-cards {
+    0% {
+        -webkit-transform: rotateX(0);
+        transform: rotateX(0);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: rotateX(-70deg);
+        transform: rotateX(-70deg);
+        opacity: 0;
+    }
+}
+
+@keyframes flip-cards {
+    0% {
+        -webkit-transform: rotateX(0);
+        transform: rotateX(0);
+        opacity: 1;
+    }
+    50% {
+        -webkit-transform: rotateX(-70deg);
+        transform: rotateX(-70deg);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: rotateX(0);
+        transform: rotateX(0);
+        opacity: 1;
+    }
+}
+
+#forecast-list-5days .forecast-item {
+    min-width: 275px;
+}
+
+#forecast-list-5days {
+    /* overflow-x: auto; */
 }

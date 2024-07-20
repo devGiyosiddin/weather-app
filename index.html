@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeatherApp</title>
+    <!-- Favicon -->
+    <link rel="site icon" type="image/png" href="public/website-icon.png">
     <!-- Normalize CSS -->
     <link rel="stylesheet" href="css/normalize.css">
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
     <!-- Fonts -->
-    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/fonts.css" >
 </head>
 <body>
     <div class="content">
@@ -50,65 +52,32 @@
             </div>
             <div id="forecast-24h" class="forecast-content">
                 <button id="btn-left-24h" class="forecast-btn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16 3L7 12L16 21" stroke="#545454" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
+                    <img class="btn-icon" src="public/forecast-icon/btn-icon.svg" alt="button icon" width="24" height="24">
                 </button>
                 <ul class="forecast-list" id="forecast-list-24h">
                 </ul>
-                <button id="btn-right-24h" class="forecast-btn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8 21L17 12L8 3" stroke="#545454" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
+                <button id="btn-right-24h" class="forecast-btn forecast-btn--active">
+                    <img class="btn-icon" src="public/forecast-icon/btn-icon.svg" alt="button icon" width="24" height="24">
                 </button>
             </div>
             <div id="forecast-5days" class="forecast-content">
                 <button id="btn-left-5days" class="forecast-btn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16 3L7 12L16 21" stroke="#545454" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
+                    <img class="btn-icon" src="public/forecast-icon/btn-icon.svg" alt="button icon" width="24" height="24">
                 </button>
                 <ul class="forecast-list" id="forecast-list-5days">
-                    <li class="forecast-item">
-                        <span class="forecast-time">Вс, 07 янв.</span>
-                        <img class="forecast-icon" src="public/weather-icons/time=day-state=broken-clouds.png" alt="weather icon" width="32" height="32">
-                        <span class="forecast-temp">от -17&#176; до -11&#176;</span>
-                    </li>
-                    <li class="forecast-item">
-                        <span class="forecast-time">Пн, 08 янв.</span>
-                        <img class="forecast-icon" src="public/weather-icons/time=day-state=broken-clouds.png" alt="weather icon" width="32" height="32">
-                        <span class="forecast-temp">от -16&#176; до -10&#176;</span>
-                    </li>
-                    <li class="forecast-item">
-                        <span class="forecast-time">Вт, 09 янв.</span>
-                        <img class="forecast-icon" src="public/weather-icons/time=day-state=broken-clouds.png" alt="weather icon" width="32" height="32">
-                        <span class="forecast-temp">от -15&#176; до -9&#176;</span>
-                    </li>
-                    <li class="forecast-item">
-                        <span class="forecast-time">Ср, 10 янв.</span>
-                        <img class="forecast-icon" src="public/weather-icons/time=day-state=broken-clouds.png" alt="weather icon" width="32" height="32">
-                        <span class="forecast-temp">от -14&#176; до -8&#176;</span>
-                    </li>
-                    <li class="forecast-item">
-                        <span class="forecast-time">Чт, 11 янв.</span>
-                        <img class="forecast-icon" src="public/weather-icons/time=day-state=broken-clouds.png" alt="weather icon" width="32" height="32">
-                        <span class="forecast-temp">от -13&#176; до -7&#176;</span>
-                    </li>
                 </ul>
-                <button id="btn-right-5days" class="forecast-btn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8 21L17 12L8 3" stroke="#545454" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
+                <button id="btn-right-5days" class="forecast-btn forecast-btn--active">
+                    <img class="btn-icon" src="public/forecast-icon/btn-icon.svg" alt="button icon" width="24" height="24">
                 </button>
             </div>
         </section>
         <footer class="footer">
-            <a href="https://preax.ru" class="footer-link">Проект выполнен в рамках стажировки <span class="footer-link__und">PREAX</span></a>
+            <p class="footer-text">Проект выполнен в рамках стажировки 
+                <a href="https://preax.ru" class="footer-link" target="_blank">PREAX</a>
+            </p>
         </footer>
     </div>
-    <script src="js/input.js"></script>
-    <script src="js/insertCards.js"></script>
-    <script src="js/tabSwitcher.js"></script>
-    <script src="js/forecast.js"></script>
+    
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>

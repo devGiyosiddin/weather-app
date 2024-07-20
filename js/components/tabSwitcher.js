@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+export default function tabSwitcher() {
     const forecastTabs = document.querySelectorAll('.forecast-radio');
     const forecastContents = document.querySelectorAll('.forecast-content');
 
@@ -11,4 +11,4 @@ document.addEventListener('DOMContentLoaded', function () {
             contentToShow.style.display = 'flex';
         });
     });
-});
+}

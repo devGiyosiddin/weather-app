@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', (event) => {
+export default function insertCards() {
     const weatherData = [
         {
             title: "Влажность",
@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             title: "Давление",
             icon: "barometr",
             value: "761",
+            value2: 91,
             minParams: "0%",
             maxParams: "1000%",
             param: "Повышенное",
@@ -52,11 +53,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     const cardsContainer = document.getElementById('cards');
     const cardsHTML = weatherData.map((card, index) => {
-        // Это я сделал чтоб круг инпута стоял как на макете, а то не получился )
-        let adjustedValue = parseInt(card.value);
-        if (index === 0) adjustedValue -= 10; // Первый input: -10
-        else if (index === 1) adjustedValue += 20; // Второй input: +20
-        else if (index === 2) adjustedValue -= 5; // Третий input: -5
 
         return `<li class="card">
             <div class="card-content">
@@ -65,16 +61,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 <span class="card-value">${card.value}</span>
             </div>
             <div class="card-footer">
-                ${card.range ? `<input type="range" min="${parseInt(card.minParams)}" max="${parseInt(card.maxParams)}" value="${adjustedValue}" class="slider-input ${card.pressure ? 'slider-input--pressure' : ''}" disabled>` : ''}
+                ${card.range ? `<div class="card-slider ${card.pressure ? 'card-slider--pressure' : ''}">
+                    <span class="card-slider__range" style="${card.value ? `left:${card.value2 ? card.value2 : parseInt(card.value)}px;` : ''}"></span>
+                </div>` : ''}
                 ${card.humidity
                 ? `<div class="card-footer--humidity">
                         <span class="card-footer__from">${card.minParams}</span>
                         <span class="card-footer__to">${card.maxParams}</span>
                     </div>`
                 : `${card.param || ''} ${card.time || ''}`}
-                </div>
+            </div>
         </li>`;
     }).join("");
 
     cardsContainer.innerHTML = cardsHTML;
-});
+}
