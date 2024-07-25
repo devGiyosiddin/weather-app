@@ -11,4 +11,8 @@ export default function tabSwitcher() {
             contentToShow.style.display = 'flex';
         });
     });
+    document.addEventListener('DOMContentLoaded', () => {
+        const tab24h = document.getElementById('forecast-24h');
+        tab24h.style.display = "flex";
+    })
 }

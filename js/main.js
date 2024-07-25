@@ -3,11 +3,13 @@ import forecast from './components/forecast.js';
 import input from './components/input.js';
 import tabSwitcher from './components/tabSwitcher.js';
 import btnsclick from './components/btns.js';
+import logoChange from './components/logoChange.js';
 
-insertCards();
-input();
-forecast();
-tabSwitcher();
-btnsclick();
 document.addEventListener('DOMContentLoaded', (event) => {
+    insertCards();
+    input();
+    forecast();
+    tabSwitcher();
+    btnsclick();
+    logoChange();
 });

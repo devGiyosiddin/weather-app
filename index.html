@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeatherApp</title>
     <!-- Favicon -->
-    <link rel="site icon" type="image/png" href="public/website-icon.png">
+    <link rel="icon" type="image/png" href="public/website-icon.png">
     <!-- Normalize CSS -->
     <link rel="stylesheet" href="css/normalize.css">
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
     <!-- Fonts -->
-    <link rel="stylesheet" href="css/fonts.css" >
+    <link rel="stylesheet" href="css/fonts.css">
 </head>
 <body>
     <div class="content">
         <header class="header">
-            <a href="#" class="header-link">
-                <img class="header-logo" src="public/Logo.svg" alt="Website logo" width="192" height="31">
+            <a href="#" class="header-link" aria-label="Home">
+                <img id="header-logo" class="header-logo" src="public/Logo.svg" alt="Website logo" width="192" height="31">
             </a>
             <div class="input-wrapper">
-                <input type="text" class="header-input" placeholder="Поиск по городу">
-                <div class="search-icon"></div>
+                <input type="text" class="header-input" placeholder="Поиск по городу" aria-label="Search by city">
+                <div class="search-icon" aria-label="Search"></div>
             </div>
         </header>
         <main class="weather-today">
@@ -33,7 +33,7 @@
                 </div>
                 <div class="temp">-7&#176;</div>
                 <div class="weather">
-                    <img src="public/weather-icons/time=night_state=broken_clouds.svg" alt="weather" class="weather-icon">
+                    <img src="public/weather-icons/time=night_state=broken_clouds.svg" alt="Weather icon" class="weather-icon">
                     <span class="weather-text">Облачно</span>
                 </div>
                 <div class="feels">Ощущается как <span class="feels-value">-11&#176;</span></div>
@@ -51,23 +51,23 @@
                 <label for="tab-5days" class="forecast-tab">на 5 дней</label>
             </div>
             <div id="forecast-24h" class="forecast-content">
-                <button id="btn-left-24h" class="forecast-btn">
-                    <img class="btn-icon" src="public/forecast-icon/btn-icon.svg" alt="button icon" width="24" height="24">
+                <button id="btn-left-24h" class="forecast-btn" aria-label="Previous 24 hours forecast">
+                    <img class="btn-icon" src="public/forecast-icon/btn-icon.svg" alt="Previous button icon" width="24" height="24">
                 </button>
                 <ul class="forecast-list" id="forecast-list-24h">
                 </ul>
-                <button id="btn-right-24h" class="forecast-btn forecast-btn--active">
-                    <img class="btn-icon" src="public/forecast-icon/btn-icon.svg" alt="button icon" width="24" height="24">
+                <button id="btn-right-24h" class="forecast-btn forecast-btn--active" aria-label="Next 24 hours forecast">
+                    <img class="btn-icon" src="public/forecast-icon/btn-icon.svg" alt="Next button icon" width="24" height="24">
                 </button>
             </div>
             <div id="forecast-5days" class="forecast-content">
-                <button id="btn-left-5days" class="forecast-btn">
-                    <img class="btn-icon" src="public/forecast-icon/btn-icon.svg" alt="button icon" width="24" height="24">
+                <button id="btn-left-5days" class="forecast-btn" aria-label="Previous 5 days forecast">
+                    <img class="btn-icon" src="public/forecast-icon/btn-icon.svg" alt="Previous button icon" width="24" height="24">
                 </button>
                 <ul class="forecast-list" id="forecast-list-5days">
                 </ul>
-                <button id="btn-right-5days" class="forecast-btn forecast-btn--active">
-                    <img class="btn-icon" src="public/forecast-icon/btn-icon.svg" alt="button icon" width="24" height="24">
+                <button id="btn-right-5days" class="forecast-btn forecast-btn--active" aria-label="Next 5 days forecast">
+                    <img class="btn-icon" src="public/forecast-icon/btn-icon.svg" alt="Next button icon" width="24" height="24">
                 </button>
             </div>
         </section>

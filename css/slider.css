@@ -117,9 +117,6 @@
     transform: rotate(180deg);
 }
 
-.forecast-btn--active {
-    opacity: 1;
-}
 
 .forecast-list {
     width: 880px;
@@ -128,8 +125,6 @@
     gap: 16px;
     list-style: none;
     margin: 0 32px;
-    /* overflow-x: auto; */
-    /* overflow-y: hidden; */
     mask-image: linear-gradient(90deg, #000 95%, transparent 100%);
 }
 

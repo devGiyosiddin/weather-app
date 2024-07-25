@@ -1,0 +1,327 @@
+@media screen and (max-width: 1280px) {
+    .content {
+        min-width: 960px;
+        margin: 0;
+    }
+    .info {
+        width: 374px;
+    }
+    .forecast-list {
+        width: 720px;
+    }
+    .slider,
+    .footer {
+        width: 896px;
+    }
+    body {
+        padding: 32px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    body {
+        height: auto;
+        background-attachment: scroll;
+        background-position: top center;
+        padding: 24px;
+    }
+    .content {
+        width: 100%;
+        min-width: 838px;
+        height: auto;
+    }
+    .header-link {
+        display: flex;
+        align-items: center;
+        height: 48px;
+    }
+    .input-wrapper,
+    .header-input {
+        width: 601px;
+    }
+    .weather-today {
+        height: auto;
+        justify-content: start;
+        flex-direction: column;
+        align-items: center;
+        padding: 24px;
+        gap: 48px;
+    }
+    .info {
+        height: auto;
+        padding: 0px 8px;
+        width: 790px;
+    }
+    .dtl-wrapper,
+    .temp {
+        margin-bottom: 24px;
+    }
+    .location,
+    .day,
+    .weather {
+        margin-bottom: 6px;
+    }
+    .cards-wrapper {
+        gap: 12px;
+    }
+    .card {
+        width: 163px;
+    }
+    .slider,
+    .footer {
+        width: auto;
+    }
+    .slider,
+    .footer {
+        padding: 24px;
+    }
+    .slider-menu {
+        margin-bottom: 24px;
+    }
+    .forecast-list {
+        width: 630px;
+        gap: 12px;
+        margin: 0 24px;
+    }
+}
+
+@media screen and (max-width: 886px) {
+    .content {
+        min-width: 720px;
+    }
+    .header {
+        padding: 24px;
+    }
+    .input-wrapper,
+    .header-input {
+        width: 483px;
+    }
+    .info {
+        width: 672px;
+    }
+    .slider,
+    .footer {
+        width: 100%;
+        height: auto;
+    }
+    .forecast-list {
+        width: 512px;
+        height: 136px;
+        justify-content: space-between;
+    }
+    .forecast-item {
+        width: 73px;
+        height: 136px;
+        display: flex;
+        flex-direction: column;
+    }
+    #forecast-list-5days .forecast-item {
+        min-width: 131px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 16px;
+    }
+    .content {
+        min-width: 608px;
+    }
+    .header {
+        padding: 16px;
+    }
+    .input-wrapper,
+    .header-input {
+        width: 409px;
+        height: 32px;
+    }
+    .header-input {
+        font-size: 14px;
+        line-height: 114%;   
+        padding: 8px;
+    }
+    .search-icon {
+        width: 16px;
+        height: 16px;
+        top: 8px;
+        right: 12px;
+        background: url("../public/search-icon--mini.svg") no-repeat;
+    }
+    .weather-today {
+        padding: 24px;
+        gap: 32px;
+    }
+    .info {
+        width: 576px;
+    }
+    .dtl-wrapper {
+        height: 60px;
+    }
+    .dtl-wrapper,
+    .temp {
+        margin-bottom: 16px;
+    }
+    .temp {
+        font-size: 56px;
+    }
+    .location,
+    .day {
+        margin-bottom: 4px;
+    }
+    .day,
+    .time {
+        font-size: 14px;
+        line-height: 114%;
+    }
+    .header-link {
+        width: 32px;
+        height: 32px;
+    }
+    .weather-today {
+        padding: 16px;
+    }
+    .location {
+        font-size: 16px;
+    }
+    .weather {
+        line-height: 114%;
+        font-size: 14px;
+        margin-bottom: 4px;
+    }
+    .feels {
+        font-size: 14px;
+        line-height: 114%;
+    }
+    .cards-wrapper {
+        width: 400px;
+        gap: 8px;
+    }
+    .card {
+        width: 128px;
+        height: 148px;
+        padding: 12px;
+    }
+    .card-content {
+        height: 86px;
+        margin-bottom: 12px;
+    }
+    .card-title {
+        font-size: 12px;
+        line-height: 133%;
+        margin-bottom: 12px;
+    }
+    .card-icon {
+        width: 24px;
+        height: 24px;
+        margin-bottom: 12px;
+    }
+    .card-value {
+        font-size: 22px;
+    }
+    .card-footer {
+        height: 24px;
+    }
+    .car-slider {
+        height: 6px;
+        margin-bottom: 6px;
+    }
+    .card-slider__range {
+        width: 6px;
+        height: 7px;
+        box-shadow: 0 0 3px 2px rgba(0,0,0,0.2);
+    }
+    .card-footer--humidity {
+        font-size: 10px;
+        line-height: 120%;
+    }
+    .slider {
+        padding: 16px;
+    }
+    .slider-menu {
+        margin-bottom: 16px;
+    }
+    .slider-title {
+        font-size: 16px;
+        line-height: 125%;
+    }
+    .forecast-tab {
+        width: 62px;
+        height: 18px;
+        font-size: 12px;
+        line-height: 133%;
+        margin-top: 4px;
+        margin-left: 16px;
+    }
+    .forecast-list {
+        width: 476px;
+        height: 46px;
+        gap: 8px;
+        margin: 0 16px;
+    }
+    .forecast-item {
+        width: 118px;
+        height: 48px;
+        flex-direction: row;
+        padding: 12px;
+        font-size: 12px;
+        line-height: 133%;
+        gap: 12px;
+    }
+    .forecast-icon {
+        width: 24px;
+        height: 24px;
+    }
+    .forecast-btn {
+        width: 40px;
+        height: 32px;
+        padding: 8px 12px;
+    }
+    .btn-icon {
+        display: block;
+        width: 16px;
+        height: 16px;
+    }
+    .footer {
+        padding: 16px;
+    }
+    .footer-text {
+        font-size: 12px;
+        line-height: 133%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .content {
+        min-width: 343px;
+    }
+    .input-wrapper,
+    .header-input {
+        width: 263px;
+    }
+    .info {
+        width: 311px;
+    }
+    .cards-wrapper {
+        width: 311px;
+        height: 304px;
+        gap: 8px;
+    }
+    .card {
+        width: 98px;
+    }
+    .forecast-content {
+        width: 311px;
+    }
+    .forecast-list {
+        width: 199px;
+        height: 104px;
+    }
+    .forecast-item {
+        width: 55px;
+        height: 104px;
+        flex-direction: column;
+    }
+    #forecast-list-5days .forecast-item {
+        min-width: 98px;
+    }
+}

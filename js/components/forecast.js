@@ -31,7 +31,7 @@ export default function forecast() {
     const list5days = document.getElementById('forecast-list-5days');
     const tabs5daysHTML = forecast5daysData.map((tab) => {
         return `
-            <li class="forecast-item flip">
+            <li class="forecast-item forecast-item--5days flip">
                 <span class="forecast-time">${tab.day}</span>
                 <img src="../public/forecast-icon/${tab.icon}" alt="weather icon" class="forecast-icon" width="32" height="32">
                 <span class="forecast-temp">${tab.temp}</span>

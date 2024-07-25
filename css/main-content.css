@@ -1,5 +1,5 @@
 .content {
-    max-width: 1120px;
+    min-width: 1280px;
     height: 860px;
     backdrop-filter: blur(25px);
     border-radius: 8px;
@@ -11,6 +11,7 @@
 /* WEATHER-TODAY */
 .weather-today { 
     display: flex;
+    justify-content: space-between;
     width: 100%;
     height: 472px;
     padding: 32px;
