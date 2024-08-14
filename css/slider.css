@@ -1,6 +1,7 @@
 /* SLIDER */
 .slider {
-    width: 1120px;
+    /* width: 1120px; */
+    width: 100%;
     height: 192px;
     padding: 32px;
 }
@@ -119,7 +120,8 @@
 
 
 .forecast-list {
-    width: 880px;
+    /* width: 880px; */
+    width: 100%;
     height: 64px;
     display: flex;
     gap: 16px;

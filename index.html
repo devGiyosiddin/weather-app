@@ -17,7 +17,11 @@
     <div class="content">
         <header class="header">
             <a href="#" class="header-link" aria-label="Home">
-                <img id="header-logo" class="header-logo" src="public/Logo.svg" alt="Website logo" width="192" height="31">
+                <picture class="header-picture">
+                    <source srcset="public/logo-mini.svg" media="(max-width: 375px)" width="32" height="14">
+                    <source srcset="public/logo-small.svg" media="(max-width: 768px)" width="54" height="23">
+                    <img id="header-logo" class="header-logo" src="public/Logo.svg" alt="Website logo" width="192" height="31">
+                </picture>
             </a>
             <div class="input-wrapper">
                 <input type="text" class="header-input" placeholder="Поиск по городу" aria-label="Search by city">

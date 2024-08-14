@@ -55,11 +55,11 @@ export default function insertCards() {
     const cardsHTML = weatherData.map((card, index) => {
 
         return `<li class="card">
-            <div class="card-content">
-                <h3 class="card-title">${card.title}</h3>
+            <figure class="card-content">
+                <figcaption class="card-title">${card.title}</figcaption>
                 <img src="../public/cards-icon/${card.icon}.svg" alt="icon" class="card-icon" width="32" height="32">
                 <span class="card-value">${card.value}</span>
-            </div>
+            </figure>
             <div class="card-footer">
                 ${card.range ? `<div class="card-slider ${card.pressure ? 'card-slider--pressure' : ''}">
                     <span class="card-slider__range" style="${card.value ? `left:${card.value2 ? card.value2 : parseInt(card.value)}px;` : ''}"></span>
