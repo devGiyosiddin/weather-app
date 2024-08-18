@@ -1,10 +1,10 @@
 .content {
-    min-width: 1280px;
+    max-width: 1120px;
     height: 860px;
     backdrop-filter: blur(25px);
     border-radius: 8px;
     background: rgba(112, 112, 112, 0.1);
-    margin: auto;
+    margin: 0 auto;
 }
 
 
