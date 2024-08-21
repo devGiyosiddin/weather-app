@@ -35,6 +35,9 @@
     margin-left: 32px;
     transition: all 1s;
 }
+.forecast-tab:hover {
+    color: var(--main-color);
+}
 
 .forecast-radio {
     display: none;
@@ -181,9 +184,5 @@
 }
 
 #forecast-list-5days .forecast-item {
-    width: 275px;
-}
-
-#forecast-list-5days {
-    /* overflow-x: auto; */
+    min-width: 275px;
 }

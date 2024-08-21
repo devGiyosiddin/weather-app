@@ -20,7 +20,6 @@
 /* SEARCH-INPUT */
 .input-wrapper {
     position: relative;
-    display: inline-block;
     width: 506px;
     height: 48px;
     border-radius: 8px;

@@ -53,6 +53,16 @@ export default function insertCards() {
 
     const cardsContainer = document.getElementById('cards');
     const cardsHTML = weatherData.map((card, index) => {
+        let leftValue = '';
+
+        // set left value on 768px for card-slider__range
+        if (window.innerWidth <= 768) {
+            if (index === 0) leftValue = '50px';
+            if (index === 1) leftValue = '50px';
+            if (index === 2) leftValue = '17px';
+        } else {
+            leftValue = card.value2 ? `${card.value2}px` : `${parseInt(card.value)}px`;
+        }
 
         return `<li class="card">
             <figure class="card-content">
@@ -62,7 +72,7 @@ export default function insertCards() {
             </figure>
             <div class="card-footer">
                 ${card.range ? `<div class="card-slider ${card.pressure ? 'card-slider--pressure' : ''}">
-                    <span class="card-slider__range" style="${card.value ? `left:${card.value2 ? card.value2 : parseInt(card.value)}px;` : ''}"></span>
+                    <span class="card-slider__range" style="left: ${leftValue};"></span>
                 </div>` : ''}
                 ${card.humidity
                 ? `<div class="card-footer--humidity">
