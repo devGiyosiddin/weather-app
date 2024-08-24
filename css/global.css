@@ -38,7 +38,10 @@ html {
 }
 
 body {
-    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
     color: var(--main-color);
     font-size: 20px;
     font-weight: 400;

@@ -6,7 +6,9 @@ export default function forecast() {
                 { time: '18:00', temp: '-7', icon: 'cloudy.svg' },
                 { time: '21:00', temp: '-9', icon: 'cloudy.svg' },
                 { time: '00:00', temp: '-11', icon: 'cloudy.svg' },
-                { time: '00:00', temp: '-11', icon: 'cloudy.svg' }
+                { time: '03:00', temp: '-13', icon: 'cloudy.svg' },
+                { time: '06:00', temp: '-15', icon: 'cloudy.svg' },
+                { time: '09:00', temp: '-18', icon: 'cloudy.svg' },
     ];
     const list24h = document.getElementById('forecast-list-24h');
     const tabs24hHTML = forecast24hData.map((tab) => {
@@ -26,7 +28,8 @@ export default function forecast() {
         { day: 'Вс, 07 янв.', temp: 'от -17° до -11°', icon: 'sunny+cloudy.svg' },
         { day: 'Пн, 08 янв.', temp: 'от -16° до -8°', icon: 'sunny+cloudy.svg' },
         { day: 'Вт, 09 янв.', temp: 'от -8° до -2°', icon: 'cloudy.svg' },
-        { day: 'Вт, 09 янв.', temp: 'от -8° до -2°', icon: 'cloudy.svg' }
+        { day: 'Ср, 10 янв.', temp: 'от -12° до -4°', icon: 'cloudy.svg' },
+        { day: 'Чт, 11 янв.', temp: 'от -14° до -6°', icon: 'cloudy.svg' }
     ];
     const list5days = document.getElementById('forecast-list-5days');
     const tabs5daysHTML = forecast5daysData.map((tab) => {

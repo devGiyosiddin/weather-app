@@ -23,10 +23,10 @@
                     <img id="header-logo" class="header-logo" src="public/Logo.svg" alt="Website logo" width="192" height="31">
                 </picture>
             </a>
-            <div class="input-wrapper">
+            <form method="get" class="input-wrapper">
                 <input type="text" class="header-input" placeholder="Поиск по городу" aria-label="Search by city">
                 <div class="search-icon"></div>
-            </div>
+            </form>
         </header>
         <main class="weather-today">
             <div class="info">
@@ -55,7 +55,7 @@
                 <label for="tab-5days" class="forecast-tab">на 5 дней</label>
             </div>
             <div id="forecast-24h" class="forecast-content">
-                <button id="btn-left-24h" class="forecast-btn" aria-label="Previous 24 hours forecast">
+                <button id="btn-left-24h" class="forecast-btn" aria-label="Previous 24 hours forecast" disabled>
                     <img class="btn-icon" src="public/forecast-icon/btn-icon.svg" alt="Previous button icon" width="24" height="24">
                 </button>
                 <ul class="forecast-list" id="forecast-list-24h">

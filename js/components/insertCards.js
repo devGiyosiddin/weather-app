@@ -54,12 +54,35 @@ export default function insertCards() {
     const cardsContainer = document.getElementById('cards');
     const cardsHTML = weatherData.map((card, index) => {
         let leftValue = '';
+        let maskPosition = '';
 
-        // set left value on 768px for card-slider__range
-        if (window.innerWidth <= 768) {
-            if (index === 0) leftValue = '50px';
-            if (index === 1) leftValue = '50px';
-            if (index === 2) leftValue = '17px';
+        if (index === 0) {
+            maskPosition = '79px';
+            leftValue = '75px';
+        }
+        if (index === 1) {
+            maskPosition = '96px';
+            leftValue = '92px';
+        };
+        if (index === 2) {
+            maskPosition = '31px';
+            leftValue = '27px';
+        };
+        // set left value on 768px for progress-bar__range
+        if (window.innerWidth <= 767) {
+            if (index === 0) {
+                leftValue = '52px';
+                maskPosition = '56px'
+            };
+            if (index === 1) {
+                leftValue = '52px';
+                maskPosition = '56px';
+            };
+            
+            if (index === 2) {
+                leftValue = '17px';
+                maskPosition = '21px';
+            };
         } else {
             leftValue = card.value2 ? `${card.value2}px` : `${parseInt(card.value)}px`;
         }
@@ -71,8 +94,16 @@ export default function insertCards() {
                 <span class="card-value">${card.value}</span>
             </figure>
             <div class="card-footer">
-                ${card.range ? `<div class="card-slider ${card.pressure ? 'card-slider--pressure' : ''}">
-                    <span class="card-slider__range" style="left: ${leftValue};"></span>
+                ${card.range ? `<div class="progress-bar ${card.pressure ? 'progress-bar--pressure' : ''}">
+                    <div class="progress-bar__bar" style="
+                        mask-image: radial-gradient(
+                            circle at ${maskPosition},
+                            transparent 6px,
+                            var(--proggress-bar-bg-color) 6px,
+                            var(--proggress-bar-bg-color) 6px
+                        );
+                    "></div>
+                    <span class="progress-bar__ellipse" style="left: ${leftValue}"></span>
                 </div>` : ''}
                 ${card.humidity
                 ? `<div class="card-footer--humidity">
