@@ -6,7 +6,7 @@
         float: right;
     }
     .info {
-        width: 374px;
+        min-width: 374px;
         height: 408px;
         padding: 8px;
     }
@@ -173,7 +173,7 @@
         font-size: 14px;
         line-height: 114%;
     }
-    .weather-icon {
+    .icon-04d {
         width: 16px;
         height: 16px;
         margin-right: 4px;
@@ -211,10 +211,12 @@
         font-size: 10px;
     }
     .progress-bar {
-        height: 6px;
         margin-bottom: 6px;
     }
-    .progress-bar__range {
+    .progress-bar__bar {
+        height: 6px;
+    }
+    .progress-bar__ellipse {
         width: 6px;
         height: 7px;
         box-shadow: 0 0 3px 2px rgba(0,0,0,0.2);

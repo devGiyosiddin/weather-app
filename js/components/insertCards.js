@@ -61,11 +61,11 @@ export default function insertCards() {
             leftValue = '75px';
         }
         if (index === 1) {
-            maskPosition = '96px';
+            maskPosition = '95px';
             leftValue = '92px';
         };
         if (index === 2) {
-            maskPosition = '31px';
+            maskPosition = '32px';
             leftValue = '27px';
         };
         // set left value on 768px for progress-bar__range
@@ -99,7 +99,7 @@ export default function insertCards() {
                         mask-image: radial-gradient(
                             circle at ${maskPosition},
                             transparent 6px,
-                            var(--proggress-bar-bg-color) 6px,
+                            transparent 6px,
                             var(--proggress-bar-bg-color) 6px
                         );
                     "></div>

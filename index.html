@@ -12,15 +12,16 @@
     <link rel="stylesheet" href="css/styles.css">
     <!-- Fonts -->
     <link rel="stylesheet" href="css/fonts.css">
+    <!-- <link rel="preload" as="image" imagesrcset="./public/logo/logo-small.svg"> -->
 </head>
 <body>
     <div class="content">
         <header class="header">
             <a href="#" class="header-link" aria-label="Home">
                 <picture class="header-picture">
-                    <source srcset="public/logo-mini.svg" media="(max-width: 767px)" width="32" height="14">
-                    <source srcset="public/logo-small.svg" media="(max-width: 1023px)" width="54" height="23">
-                    <img id="header-logo" class="header-logo" src="public/Logo.svg" alt="Website logo" width="192" height="31">
+                    <source srcset="public/logo/logo-mobile.svg" media="(max-width: 767px)" width="32" height="14">
+                    <source srcset="public/logo/logo-tablet.svg" media="(max-width: 1023px)" width="54" height="23">
+                    <img id="header-logo" class="header-logo" src="public/logo/logo-desktop.svg" alt="Website logo" width="192" height="31">
                 </picture>
             </a>
             <form method="get" class="input-wrapper">
@@ -37,7 +38,7 @@
                 </div>
                 <div class="temp">-7&#176;</div>
                 <div class="weather">
-                    <img src="public/weather-icons/time=night_state=broken_clouds.svg" alt="Weather icon" class="weather-icon">
+                    <img src="public/weather-icons/04d.png" alt="Weather icon" class="icon-04d">
                     <span class="weather-text">Облачно с прояснениями</span>
                 </div>
                 <div class="feels">Ощущается как <span class="feels-value">-11&#176;</span></div>

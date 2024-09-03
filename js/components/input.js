@@ -13,6 +13,7 @@ export default function input() {
     
     input.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
+            event.preventDefault();
             // Действие по нажатию клавиши Enter (например, отправка формы)
             console.log(input.value);
         }
