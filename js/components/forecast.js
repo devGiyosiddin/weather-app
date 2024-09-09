@@ -15,7 +15,7 @@ export default function forecast() {
             return `
                 <li class="forecast-item flip">
                     <span class="forecast-time">${tab.time}</span>
-                    <img src="../public/forecast-icon/${tab.icon}" alt="weather icon" class="forecast-icon" width="32" height="32">
+                    <img src="./public/forecast-icon/${tab.icon}" alt="weather icon" class="forecast-icon" width="32" height="32">
                     <span class="forecast-temp">${tab.temp}&#176;</span>
                 </li>
             `
@@ -36,7 +36,7 @@ export default function forecast() {
         return `
             <li class="forecast-item forecast-item--5days flip">
                 <span class="forecast-time">${tab.day}</span>
-                <img src="../public/forecast-icon/${tab.icon}" alt="weather icon" class="forecast-icon" width="32" height="32">
+                <img src="./public/forecast-icon/${tab.icon}" alt="weather icon" class="forecast-icon" width="32" height="32">
                 <span class="forecast-temp">${tab.temp}</span>
             </li>`
     }).join("");

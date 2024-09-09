@@ -90,7 +90,7 @@ export default function insertCards() {
         return `<li class="card">
             <figure class="card-content">
                 <figcaption class="card-title">${card.title}</figcaption>
-                <img src="../public/cards-icon/${card.icon}.svg" alt="icon" class="card-icon" width="32" height="32">
+                <img src="./public/cards-icon/${card.icon}.svg" alt="icon" class="card-icon" width="32" height="32">
                 <span class="card-value">${card.value}</span>
             </figure>
             <div class="card-footer">

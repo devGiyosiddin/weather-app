@@ -98,6 +98,7 @@
 .forecast-btn:disabled {
     opacity: 0.4;
     cursor: default;
+    pointer-events: none;
 }
 .forecast-btn:hover {
     background-color: #dadada;
