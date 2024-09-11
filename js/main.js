@@ -23,7 +23,7 @@ async function loadWeather(city) {
         let locationText = document.querySelector('.location');
         locationText.textContent = `${weatherData.name}`;
 
-        // Время
+        // День недели
         let todayDate = new Date();
         let dateText = document.querySelector('.day');
         dateText.textContent = `${capitalizeFirstLetter(todayDate.toLocaleDateString('ru-RU', { weekday: 'long' }))}, ${todayDate.toLocaleDateString('ru-RU', { day: 'numeric' })} ${todayDate.toLocaleDateString('ru-RU', { month: 'long' })}`;
@@ -32,11 +32,15 @@ async function loadWeather(city) {
         let timezoneOffset = weatherData.timezone; // Смещение в секундах от UTC
         let localTime = new Date(todayDate.getTime() + timezoneOffset * 1000); // Корректируем время
 
+        // Отнимаем 5 часов
+        localTime.setHours(localTime.getHours() - 5);
+
         let timeText = document.querySelector('.time');
         timeText.textContent = localTime.toLocaleTimeString('ru-RU', {
             hour: '2-digit',
             minute: '2-digit'
         });
+
 
         // Температура
         let tempCelsius = kelvinToCelsius(weatherData.main.temp);
