@@ -2,6 +2,10 @@ export default function tabSwitcher() {
     const forecastTabs = document.querySelectorAll('.forecast-radio');
     const forecastContents = document.querySelectorAll('.forecast-content');
 
+    
+
+    console.log(forecastTabs[0]);
+    // Переключение табов
     forecastTabs.forEach(tab => {
         tab.addEventListener('change', function () {
             forecastContents.forEach(content => {

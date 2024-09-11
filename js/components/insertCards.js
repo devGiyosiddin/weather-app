@@ -1,9 +1,10 @@
-export default function insertCards() {
-    const weatherData = [
+export default function insertCards(weatherData) {
+    // Маппинг данных, которые приходят от API, чтобы соответствовать структуре, используемой для карточек
+    const weatherDataMapped = [
         {
             title: "Влажность",
             icon: "humidity",
-            value: "75 %",
+            value: `${weatherData.main.humidity}%`,
             minParams: "0%",
             maxParams: "100%",
             range: true,
@@ -12,50 +13,51 @@ export default function insertCards() {
         {
             title: "Давление",
             icon: "barometr",
-            value: "761",
-            value2: 91,
+            value: `${weatherData.main.pressure}`,
+            value2: weatherData.main.pressure - 900, // Допустим, используем разницу для отображения давления
             minParams: "0%",
-            maxParams: "1000%",
-            param: "Повышенное",
+            maxParams: "1000 hPa",
+            param: weatherData.main.pressure > 1010 ? "Повышенное" : "Нормальное",
             pressure: true,
             range: true,
         },
         {
             title: "Видимость",
             icon: "visibility",
-            value: "28 км",
+            value: `${weatherData.visibility / 1000} км`,
             minParams: "0%",
-            maxParams: "100%",
-            param: "Нормальная",
+            maxParams: "10 км",
+            param: weatherData.visibility > 5000 ? "Нормальная" : "Плохая",
             range: true,
         },
         {
             title: "Рассвет",
             icon: "sunrise",
-            value: "8:42",
+            value: new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' }),
             param: "Прошло: ",
-            time: "02:47",
+            time: new Date((Date.now() - weatherData.sys.sunrise * 1000)).toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' }),
         },
         {
             title: "Закат",
             icon: "sunset",
-            value: "16:37",
+            value: new Date(weatherData.sys.sunset * 1000).toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' }),
             param: "Осталось: ",
-            time: "05:08",
+            time: new Date((weatherData.sys.sunset * 1000 - Date.now())).toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' }),
         },
         {
             title: "Сила ветра",
             icon: "direction",
-            value: "2 м/с",
-            param: "Северо-западный",
-        },
-    ];
+            value: `${Math.round(weatherData.wind.speed)} м/с`,
+            param: weatherData.wind.deg > 180 ? "Северо-западный" : "Южный",
+        }
+    ];    
 
     const cardsContainer = document.getElementById('cards');
-    const cardsHTML = weatherData.map((card, index) => {
+    const cardsHTML = weatherDataMapped.map((card, index) => {
         let leftValue = '';
         let maskPosition = '';
 
+        // Установка позиции для прогресс-бара (по аналогии с вашей логикой)
         if (index === 0) {
             maskPosition = '79px';
             leftValue = '75px';
@@ -68,7 +70,8 @@ export default function insertCards() {
             maskPosition = '32px';
             leftValue = '27px';
         };
-        // set left value on 768px for progress-bar__range
+
+        // Для адаптивного дизайна на экранах шириной до 768px
         if (window.innerWidth <= 767) {
             if (index === 0) {
                 leftValue = '52px';
@@ -78,7 +81,6 @@ export default function insertCards() {
                 leftValue = '52px';
                 maskPosition = '56px';
             };
-            
             if (index === 2) {
                 leftValue = '17px';
                 maskPosition = '21px';
@@ -100,7 +102,7 @@ export default function insertCards() {
                             circle at ${maskPosition},
                             transparent 6px,
                             transparent 6px,
-                            var(--proggress-bar-bg-color) 6px
+                            var(--progress-bar-bg-color) 6px
                         );
                     "></div>
                     <span class="progress-bar__ellipse" style="left: ${leftValue}"></span>

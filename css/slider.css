@@ -43,6 +43,13 @@
     display: none;
 }
 
+
+
+
+.forecast-btn--active {
+    opacity: 1;
+}
+
 /* Forecast-tab--active */
 .forecast-radio:checked + .forecast-tab {
     color: var(--main-color);
@@ -95,10 +102,10 @@
     border-radius: 8px;
     background: rgba(245, 244, 244, 0.4);
 }
-.forecast-btn:disabled {
+.forecast-btn:disabled,
+#btn-left-5days {
     opacity: 0.4;
-    cursor: default;
-    pointer-events: none;
+    cursor: not-allowed;
 }
 .forecast-btn:hover {
     background-color: #dadada;

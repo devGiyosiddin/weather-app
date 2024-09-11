@@ -6,7 +6,9 @@
     --card-text-color: #393939;
     --forecast-text-color: #a6a6a6;
     --proggress-bar-bg-color: #d3d3d3;
-    --search-input--active: #dadada;
+    --search-input--bg-color: rgba(245, 244, 244, 0.4);
+    --search-input--hover: #dadada;
+    --search-input--color: #202020;
 }
 
 * {

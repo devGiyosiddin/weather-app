@@ -136,7 +136,10 @@
         height: 16px;
         top: 8px;
         right: 12px;
-        background: url("../public/search-icon--mini.svg") no-repeat;
+        background: url("../public/search-icon--mobile.svg") no-repeat center;
+    }
+    .has-text .search-icon {
+        background: url("../public/close-icon--mobile.svg") no-repeat center;
     }
     .weather-today {
         padding: 16px;
