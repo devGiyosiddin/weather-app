@@ -4,6 +4,7 @@ import input from './components/input.js';
 import tabSwitcher from './components/tabSwitcher.js';
 import btnsclick from './components/btns.js';
 import { getWeatherData } from './api.js';
+import {translate} from './components/translate.js';
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -13,25 +14,11 @@ function kelvinToCelsius(kelvin) {
     return kelvin - 273.15;
 }
 
-async function translate(text) {
-    const mmKey = '51427127010d6a0696d9';
-    const url = `https://api.mymemory.translated.net/get?q=${text}&key=${mmKey}&langpair=en|ru`;
-
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        return data.responseData.translatedText;
-    } catch (error) {
-        console.error("Ошибка перевода: ", error.message);
-        return text; // Возвращаем исходный текст, если перевод не удался
-    }
-}
-
 async function loadWeather(city) {
     try {
         let weatherData = await getWeatherData(city);
-        console.log(weatherData);
         insertCards(weatherData);
+
 
         // Название Города с переводом
         let locationText = document.querySelector('.location');
@@ -64,7 +51,7 @@ async function loadWeather(city) {
         // Погода и его иконка
         let weatherText = document.querySelector('.weather-text');
         let weatherIcon = document.querySelector('.weather-icon');
-        let weatherCondition = weatherData.weather[0].description;
+        let weatherCondition = weatherData.weather[0].description; 
         switch (weatherCondition) {
             case 'clear sky':
                 weatherText.textContent = 'Ясно';
@@ -102,30 +89,29 @@ async function loadWeather(city) {
                 weatherText.textContent = 'Туман';
                 weatherIcon.src = 'public/weather-icons/50d.png';
                 break;
-        }
+        };
 
         // Ошущается как
         let feelsTempToCelsius = kelvinToCelsius(weatherData.main.feels_like);
         let feelsValue = document.querySelector('.feels-value');
         feelsValue.textContent = `${feelsTempToCelsius > 0 ? '' : '-'}${Math.round(feelsTempToCelsius)}°`;
-
+        
     } catch (error) {
         console.error(`Ошибка: ${error.message}`);
     }
 }
-// Запускаем при введение значение на инпут
-input((city) => {
-    
-    loadWeather(city);
 
-    // Обновляем данные каждые 10 минут
+input((city) => {
+    loadWeather(city);
+    forecast(city);
     setInterval(() => {
-        loadWeather(city)
-    }, 600000)
+        loadWeather(city);
+        forecast(city)
+    }, 60000);
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    forecast();
+    // forecast();
     tabSwitcher();
     btnsclick();
 });
