@@ -111,7 +111,8 @@ input((city) => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    forecast();
+    loadWeather(`Beruniy`);
+    forecast(`Beruniy`);
     tabSwitcher();
     btnsclick();
 });
