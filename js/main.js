@@ -13,6 +13,20 @@ function kelvinToCelsius(kelvin) {
     return kelvin - 273.15;
 }
 
+async function translate(text) {
+    const mmKey = '51427127010d6a0696d9';
+    const url = `https://api.mymemory.translated.net/get?q=${text}&key=${mmKey}&langpair=en|ru`;
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        return data.responseData.translatedText;
+    } catch (error) {
+        console.error("Ошибка перевода: ", error.message);
+        return text; // Возвращаем исходный текст, если перевод не удался
+    }
+}
+
 async function loadWeather(city) {
     try {
         let weatherData = await getWeatherData(city);
@@ -21,16 +35,20 @@ async function loadWeather(city) {
 
         // Название Города с переводом
         let locationText = document.querySelector('.location');
-        locationText.textContent = `${weatherData.name}`;
+        let translatedCity = await translate(weatherData.name);
+        locationText.textContent = translatedCity;
 
-        // Время
+        // День недели
         let todayDate = new Date();
         let dateText = document.querySelector('.day');
         dateText.textContent = `${capitalizeFirstLetter(todayDate.toLocaleDateString('ru-RU', { weekday: 'long' }))}, ${todayDate.toLocaleDateString('ru-RU', { day: 'numeric' })} ${todayDate.toLocaleDateString('ru-RU', { month: 'long' })}`;
 
         // Вычисление времени с учетом timezone (смещение в секундах)
-        let timezoneOffset = weatherData.timezone; // Смещение в секундах от UTC
-        let localTime = new Date(todayDate.getTime() + timezoneOffset * 1000); // Корректируем время
+        let timezoneOffset = weatherData.timezone;
+        let localTime = new Date(todayDate.getTime() + timezoneOffset * 1000);
+
+        // Отнимаем 5 часов
+        localTime.setHours(localTime.getHours() - 5);
 
         let timeText = document.querySelector('.time');
         timeText.textContent = localTime.toLocaleTimeString('ru-RU', {
@@ -46,7 +64,7 @@ async function loadWeather(city) {
         // Погода и его иконка
         let weatherText = document.querySelector('.weather-text');
         let weatherIcon = document.querySelector('.weather-icon');
-        let weatherCondition = weatherData.weather[0].description; 
+        let weatherCondition = weatherData.weather[0].description;
         switch (weatherCondition) {
             case 'clear sky':
                 weatherText.textContent = 'Ясно';
@@ -84,31 +102,27 @@ async function loadWeather(city) {
                 weatherText.textContent = 'Туман';
                 weatherIcon.src = 'public/weather-icons/50d.png';
                 break;
-        };
+        }
 
         // Ошущается как
         let feelsTempToCelsius = kelvinToCelsius(weatherData.main.feels_like);
         let feelsValue = document.querySelector('.feels-value');
         feelsValue.textContent = `${feelsTempToCelsius > 0 ? '' : '-'}${Math.round(feelsTempToCelsius)}°`;
 
-
-        
     } catch (error) {
         console.error(`Ошибка: ${error.message}`);
     }
 }
-
+// Запускаем при введение значение на инпут
 input((city) => {
+    
     loadWeather(city);
+
+    // Обновляем данные каждые 10 минут
+    setInterval(() => {
+        loadWeather(city)
+    }, 600000)
 });
-
-
-// setInterval(() => {
-//     const city = document.querySelector('.header-input').value.trim(); 
-//     if (city) {
-//         loadWeather(city); 
-//     }
-// }, 600000); // Обновление каждые 10 минут
 
 document.addEventListener('DOMContentLoaded', () => {
     forecast();

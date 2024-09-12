@@ -39,16 +39,15 @@
     color: var(--main-color);
 }
 
+
 .forecast-radio {
     display: none;
 }
 
-
-
-
 .forecast-btn--active {
     opacity: 1;
 }
+
 
 /* Forecast-tab--active */
 .forecast-radio:checked + .forecast-tab {
