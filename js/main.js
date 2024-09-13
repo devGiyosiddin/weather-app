@@ -114,9 +114,21 @@ input((city) => {
     }, 60000);
 });
 
+
 document.addEventListener('DOMContentLoaded', () => {
     loadWeather(`Beruniy`);
     forecast(`Beruniy`);
     tabSwitcher();
     btnsclick();
 });
+
+// Анимация загрузки
+const preloader = document.querySelector('.preloader');
+setTimeout(function() {
+    preloader.style.opacity = '0';
+    preloader.style.transition = 'opacity 0.5s ease-out';
+    // Удаляем прелоадер из DOM после завершения анимации
+    setTimeout(function() {
+        preloader.style.display = 'none';
+    }, 500); // 500мс соответствует времени перехода
+}, 2000);
