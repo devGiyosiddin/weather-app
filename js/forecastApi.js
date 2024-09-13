@@ -1,5 +1,5 @@
 const API_KEY = '6b036e8e011247579dd120618241209';
-const BASE_URL = 'http://api.weatherapi.com/v1';
+const BASE_URL = 'https://api.weatherapi.com/v1';
 
 export async function getCurrentWeather(city) {
     const url = `${BASE_URL}/current.json?key=${API_KEY}&q=${city}&lang=ru`;
