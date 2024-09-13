@@ -1,5 +1,5 @@
 export default function insertCards(weatherData) {
-    // Маппинг данных, которые приходят от API, чтобы соответствовать структуре, используемой для карточек
+    
     const weatherDataMapped = [
         {
             title: "Влажность",
@@ -14,7 +14,7 @@ export default function insertCards(weatherData) {
             title: "Давление",
             icon: "barometr",
             value: `${weatherData.main.pressure}`,
-            value2: weatherData.main.pressure - 900, // Допустим, используем разницу для отображения давления
+            value2: weatherData.main.pressure - 900, // Используем разницу для отображения давления
             minParams: "0%",
             maxParams: "1000 hPa",
             param: weatherData.main.pressure > 1010 ? "Повышенное" : "Нормальное",
