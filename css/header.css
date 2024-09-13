@@ -72,3 +72,26 @@
 .has-text .header-input {
     background-color: var(--search-input--hover);
 }
+
+/* SUGGESTIONS LIST */
+#suggestions-list {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: rgba(122, 119, 119, 0.7);
+    border: 1px solid #ccc;
+    position: absolute;
+    width: 200px;
+}
+
+#suggestions-list li {
+    padding: 8px;
+    cursor: pointer;
+}
+
+#suggestions-list li:hover {
+    background-color: rgb(122, 119, 119);
+}
