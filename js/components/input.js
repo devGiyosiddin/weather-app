@@ -37,7 +37,7 @@ export default function input(onSubmit) {
     // Функция для получения списка городов через API
     async function getCitySuggestions(query) {
         const apiKey = '9c1c5f58313d3840cce6c5e797a522ff';
-        const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${apiKey}`);
+        const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${apiKey}`);
         const cities = await response.json();
         return cities;
     }
