@@ -11,18 +11,44 @@ export default function btnClick() {
 
     // Прокрутка для прогноза на 24 часа
     btnLeft24h.addEventListener('click', () => {
-        console.log('Нажата левая кнопка 24 часа');
         forecastList24h.scrollBy({
             left: -300, // Прокрутка на 300 пикселей влево
             behavior: 'smooth'
         });
+        if (window.innerWidth < 769) {
+            forecastList24h.scrollBy({
+                left: -200,
+                behavior: 'smooth'
+            });
+        };
+        if (window.innerWidth < 640) {
+            forecastList24h.scrollBy({
+                left: -100,
+                behavior: 'smooth'
+            });
+        };
     });
 
     btnRight24h.addEventListener('click', () => {
         forecastList24h.scrollBy({
             left: 300, // Прокрутка на 300 пикселей вправо
             behavior: 'smooth'
+            
         });
+        if (document.innerWidth < 769) {
+            forecastList24h.scrollBy({
+                left: 200,
+                behavior: 'smooth'
+    
+            });
+        };
+        if (document.innerWidth < 640) {
+            forecastList24h.scrollBy({
+                left: 100,
+                behavior: 'smooth'
+    
+            });
+        };
     });
 
     // Элементы для прогноза на 5 дней
